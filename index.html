@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> complete responsive tour and travel agency website design tutorial</title>
+    <title> AiRbnb</title>
 
     <!-- font awesome cdn link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -20,6 +20,8 @@
 <body>
     <!-- header section -->
     <header>
+        <div id="menu-bar" class="fas fa-bars"></div>
+
         <a href="#" class="logo"><span>Ai</span>r<span>bnb</span></a>
 
         <nav class="navbar">
@@ -43,9 +45,57 @@
         </from>
 
     </header>
+    <!-- header section end -->
 
 
-    <!-- custom css file link -->
+    <!-- login form comntainer -->
+
+    <div class="login-form-container">
+
+        <i class="fas fa-time" id="form-close"></i>
+
+        <form action="">
+            <h3>login</h3>
+            <input type="email" class="box" placeholder="enter your email">
+            <input type="password" class="box" placeholder="enter your password">
+            <input type="submit" value="login now" class="btn">
+            <input type="checkbox" id="remember">
+            <label for="remember">remember me</label>
+            <p>forget password? <a href="#">click here</a></p>
+            <p>don't have account? <a href="#">register now</a></p>
+        </form>
+
+    </div>
+
+<!-- home section start -->
+
+<section class="home" id="home">
+<div class="content">
+    <h3>adventure is worthwhile</h3>
+    <p>Dicover New Places to stay With Us</p>
+    <a href="#" class="btn">discover more</a>
+</div>
+
+<div class="controls">
+    <span class="vid-btn active" data-src="video3.mp4"></span>
+    <span class="vid-btn" data-src="video1.mp4"></span>
+    <span class="vid-btn" data-src="video2.mp4"></span>
+</div>
+
+<div class="video-container">
+    <video src="video3.mp4" id="video-slider" loop autoplay muted></video>
+</div>
+
+
+
+
+
+</section>
+
+<!-- home section end -->
+
+
+    <!-- custom js file link -->
     <script src="script.js"></script>
 </body>
 
