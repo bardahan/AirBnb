@@ -4,6 +4,8 @@
 
 ### Install
 
+Make sure you have mongoDB installed!
+
 On main project folder run:
 
 <code>
