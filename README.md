@@ -18,6 +18,12 @@ On main project folder run:
 npm start
 </code>
 
+### Local Website Address
+
+<code>
+http://localhost:3000
+</code>
+
 ### Postman Server Requests Config
 
 You can use it to test all server side functionality:
