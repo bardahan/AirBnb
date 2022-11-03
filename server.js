@@ -25,7 +25,7 @@ app.use((req, res, next) => {
 app.use("/css", express.static(path.resolve(__dirname, "assets/css")));
 app.use("/js", express.static(path.resolve(__dirname, "assets/js")));
 app.use("/video", express.static(path.resolve(__dirname, "assets/video")));
-app.use("/img", express.static(path.resolve(__dirname, "assets/images")));
+app.use("/images", express.static(path.resolve(__dirname, "assets/images")));
 
 app.use("/", require("./server/routes/routes")(io));
 
