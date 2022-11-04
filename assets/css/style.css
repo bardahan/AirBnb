@@ -597,6 +597,194 @@ header .search-bar-container label:hover{
   text-decoration: underline;
 }
 
+
+/* house detaile page------------------------------------------------- */
+.houses-details{
+  padding:0 12%;
+}
+.houses-title{
+  margin-top: 50px; 
+ 
+}
+
+.houses-title h1{
+  font-weight: 600;
+}
+
+.houses-title .rows{
+  font-size: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+.houses-title span{
+  margin: 0 20px;
+}
+
+.houses-title i{
+  color: #ee6618;
+  font-size: 14px;
+}
+
+.gallerys{
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas: 'first first . .''first first . .';
+  margin: 20px 0;
+}
+
+.gallerys div img{
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
+.gallerys-img-1{
+  grid-area: first;
+}
+
+.smalls-details h2{
+  font-size: 500;
+}
+
+
+.smalls-details h4{
+  text-align: right;
+  font-size: 22px;
+}
+
+.lines{
+  border: 0;
+  height: 1px;
+  background: black;
+  width: 300%;
+  max-width: 800px;
+  margin: 20px 0 50px; 
+  
+}
+.check-forms{
+  margin: 30px 0;
+  background: #fff;
+  box-shadow: 0 0 30px rgba(0,0,0,.3);
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 10px 50px;
+  font-size: 15px;
+}
+
+.check-forms label{
+  display: block;
+}
+
+.check-forms div{
+  padding: 20px;
+}
+
+.check-forms input{
+  background: transparent;
+  border: 0;
+  outline: none;
+}
+
+.check-forms button{
+    background: #ee6618;
+    border: 0;
+    outline: none;
+    color: #fff;
+    padding: 18px;
+    width: 350px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.guest-field{
+  flex: 0.9;
+}
+
+.details-list{
+  list-style: none;
+  margin: 50px 0;
+}
+
+.details-list li{
+  margin-left: 50px;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #555;
+  position: relative;
+}
+
+.details-list li span{
+  display: block;
+  font-weight: 400;
+  font-size: 16px;
+}
+/* google maps  */
+#map {
+  height: 100%;
+  margin: 0;
+  padding: 100px;
+}
+ /* google maps  */
+
+ .host{
+  display: flex;
+  align-items: center;
+ }
+ 
+ .host img{
+  width: 80px;
+  border-radius: 50% ;
+  margin-right: 30px;
+ }
+ 
+ .host h2{
+  margin-bottom: 10px;
+  font-weight: 500;
+
+ }
+
+ .host i{
+  color: #ee6618;
+  font-size: 10px;
+ }
+
+ .contact-host{
+  font-size: 15px;
+  display: inline-block;
+  margin: 40px 40px 120px;
+  text-decoration: none;
+  color: #555;
+  padding: 15px 50px;
+  border: 1px solid #ee6618;
+  border-radius: 8px;
+ }
+
+/* house detaile page---------------------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  /* media queries  */
 
 @media (max-width:1200px) {

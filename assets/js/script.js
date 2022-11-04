@@ -7,6 +7,21 @@ let menu = document.querySelector('#menu-bar');
 let navbar = document.querySelector('.navbar');
 let videoBtn = document.querySelectorAll('.vid-btn');
 
+// start google map
+let map;
+
+function initMap() {
+  new google.maps.Map(document.getElementById("map"), {
+    mapId: "8e0a97af9386fef",
+    center: { lat: 48.85, lng: 2.35 },
+    zoom: 12,
+  });
+}
+window.initMap = initMap;
+// end  google map
+
+
+
 // Gives the option of the search to disappear when we go down or up on the page.
 window.onscroll = () =>{
   searchBtn.classList.remove('fa-times');
