@@ -630,7 +630,7 @@ header .search-bar-container label:hover{
 .gallerys{
   display: grid;
   grid-gap: 10px;
-  grid-template-areas: 'first first . .''first first . .';
+  grid-template-areas: 'first first . .';
   margin: 20px 0;
 }
 
