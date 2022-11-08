@@ -66,7 +66,7 @@ section{
 header{
   position: fixed;
   top:0; left: 0; right:0;
-  background:#333;
+  background:#666;
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -764,19 +764,102 @@ header .search-bar-container label:hover{
   border-radius: 8px;
  }
 
-/* house detaile page---------------------------------------------------------------------------------------- */
+/* end house detaile page---------------------------------------------------------------------------------------- */
+
+
+/* start order page ------------------------------------------------------------ */
+
+
+.containers{
+  display: flex;
+  margin-top: 50px;
+  justify-items: center;
+  align-items: center;
+  padding: 50px;
+  min-height: 100vh;
+  margin-left: 30%;
+  font-size: medium;
+  padding-bottom: 70px;
+}
+
+.containers form{
+  padding: 20px;
+  width: 700px;
+  background: #fff ;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+}
+
+.containers form .rowes{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.containers form .rowes .coles{
+  flex: 1 1 250px;
+}
+
+.containers form .rowes .coles .titles{
+  font-size: 20px;
+  color: #333;
+  padding-bottom: 5px ;
+  text-transform: uppercase;
+}
+
+.containers form .rowes .coles .inputBoxes{
+  margin: 15px 0;
+}
+
+.containers form .rowes .coles .inputBoxes span{
+  margin-bottom: 5px;
+  display: block;
+}
+
+.containers form .rowes .coles .inputBoxes input{
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  font-size: 15px;
+  text-transform: none;
+}
+
+.containers form .rowes .coles .inputBoxes input:focus{
+  border: 1px solid #000;
+}
+
+
+.containers form .rowes .coles .flex{
+  display: flex;
+  gap: 15px;
+}
+
+.containers form .rowes .coles .flex .inputBoxes{
+  margin-top: 5px;
+}
+
+.containers form .rowes .coles .inputBoxes img{
+  height: 34px;
+  margin-top: 5px;
+  filter: drop-shadow(0 0 1px #000);
+}
+
+.containers form .sumbit-btns{
+  width: 100%;
+  padding: 12px;
+  font-size: 17px;
+  background:#ee6618 ;
+  color:#fff;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.containers form .sumbit-btns:hover{
+  background: #ee6618;
+}
 
 
 
-
-
-
-
-
-
-
-
-
+/* end order page ------------------------------------------------------------ */
 
 
 
