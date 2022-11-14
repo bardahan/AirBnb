@@ -30,4 +30,4 @@ http://localhost:3000
 
 You can use it to test all server side functionality:
 
-https://www.getpostman.com/collections/5a5c10e2312ef8ee6118
+https://www.getpostman.com/collections/28a8c737a56152969374
