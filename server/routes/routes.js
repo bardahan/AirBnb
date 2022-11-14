@@ -12,11 +12,22 @@ function SocketRouter(io) {
   router.get("/update-property", services.updateProperty);
 
   // API
+  // Properties
   router.post("/api/properties", controller.create);
   router.get("/api/properties/:id", controller.find);
   router.get("/api/properties", controller.find);
   router.put("/api/properties", controller.update);
   router.delete("/api/properties/:id", controller.delete);
+
+  // Users
+  router.post("/api/users", controller.createUser);
+  router.get("/api/users/:username/:password", controller.authentcateUser);
+  router.delete("/api/users/:username", controller.deleteUser);
+
+  // Charges
+  router.post("/api/charges", controller.createCharge);
+  router.get("/api/charges", controller.findCharges);
+  router.delete("/api/charges/:id", controller.deleteCharge);
 
   return router;
 }

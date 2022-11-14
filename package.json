@@ -21,6 +21,7 @@
     "mongoose-morgan": "^1.0.17",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.19",
-    "socket.io": "^4.5.2"
+    "socket.io": "^4.5.2",
+    "@googlemaps/google-maps-services-js": "^3.3.16"
   }
 }
