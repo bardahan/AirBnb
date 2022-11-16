@@ -14,6 +14,8 @@ function SocketRouter(io) {
   // API
   // Properties
   router.post("/api/properties", controller.create);
+  router.get("/api/properties/country/:country", controller.findByCountry);
+  router.get("/api/properties/search", controller.searchProperty);
   router.get("/api/properties/:id", controller.find);
   router.get("/api/properties", controller.find);
   router.put("/api/properties", controller.update);

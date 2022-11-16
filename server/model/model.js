@@ -40,6 +40,14 @@ var propertySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  guestCount: {
+    type: Number,
+    required: true,
+  },
+  propertyImageLink: {
+    type: String,
+    required: true,
+  },
 });
 
 var usersSchema = new mongoose.Schema({

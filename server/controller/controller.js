@@ -16,11 +16,12 @@ exports.create = async (req, res) => {
     latitude: req.body.latitude,
     country: req.body.country,
     address: req.body.address,
+    guestCount: req.body.guestCount,
+    propertyImageLink: req.body.propertyImageLink,
   });
 
   if (!(property.latitude || property.longitude)) {
     const geocode = await getGeoCodeByAddress(property.address);
-    console.log(geocode);
     property.longitude = geocode.lng;
     property.latitude = geocode.lat;
   }
@@ -38,7 +39,6 @@ exports.create = async (req, res) => {
 
 exports.find = (req, res) => {
   if (req.params.id) {
-    console.log(req.params);
     const id = req.params.id;
     PropertySchema.findById(id)
       .then((property) => {
@@ -62,6 +62,53 @@ exports.find = (req, res) => {
         res.status(500).send({ message: e.message || dbGeneralError })
       );
   }
+};
+
+exports.findByCountry = (req, res) => {
+  const country = req.params.country;
+  PropertySchema.find({ country: country })
+    .then((property) => {
+      if (!property) {
+        res.status(404).send({
+          message: "Couldn't find a property with the specified id",
+        });
+        return;
+      }
+      res.send(property);
+    })
+    .catch((e) =>
+      res.status(500).send({ message: e.message || dbGeneralError })
+    );
+};
+
+exports.searchProperty = (req, res) => {
+  const country = req.query.country;
+  const guestCount = req.query.guestCount;
+  const dateFrom = req.query.dateFrom;
+  const dateTo = req.query.dateTo;
+  PropertySchema.aggregate([
+    {
+      $lookup: {
+        from: "chargesSchema",
+        localField: "_id",
+        foreignField: "propertyId",
+        as: "propertySchema",
+      },
+    },
+  ])
+    .then((property) => {
+      console.log(property);
+      if (!property) {
+        res.status(404).send({
+          message: "Couldn't find a property with the specified id",
+        });
+        return;
+      }
+      res.send(property);
+    })
+    .catch((e) =>
+      res.status(500).send({ message: e.message || dbGeneralError })
+    );
 };
 
 exports.update = (req, res) => {
