@@ -7,6 +7,7 @@ function SocketRouter(io) {
   const router = express.Router();
 
   router.get("/", services.homeRoute);
+  router.get("/listProperty/:country", services.countryProperty);
 
   router.get("/add-property", services.addProperty);
   router.get("/update-property", services.updateProperty);

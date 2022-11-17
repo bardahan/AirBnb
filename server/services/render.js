@@ -18,6 +18,10 @@ exports.homeRoute = (req, res) => {
   //   });
 };
 
+exports.countryProperty = (req, res) => {
+  res.sendFile(path.join(__dirname, "../../views/listingPage.html"));
+};
+
 exports.addProperty = (req, res) => {
   res.render("add_property");
 };
