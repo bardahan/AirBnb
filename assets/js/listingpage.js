@@ -10,19 +10,6 @@ var map_parameters = { center: {lat: 47.490, lng: -117.585}, zoom: 8 };
 var map = new google.maps.Map(document.getElementById('map'), map_parameters);
 
 
-
-// Gives the option of the search to disappear when we go down or up on the page.
-window.onscroll = () =>{
-  menu.classList.remove('fa-times');
-  navbar.classList.remove('active');
-  loginForm.classList.remove('active');
-}
-
-menu.addEventListener('click', () =>{
-  menu.classList.toggle('fa-times');
-  navbar.classList.toggle('active');
-});
-
 formBtn.addEventListener('click', () =>{
   loginForm.classList.add('active');
 });
@@ -30,8 +17,6 @@ formBtn.addEventListener('click', () =>{
 formClose.addEventListener('click', () =>{
   loginForm.classList.remove('active');
 });
-
-
 
 var propertyname = document.getElementById('propertyname');
 var propertyservices = document.getElementById('propertyservices');

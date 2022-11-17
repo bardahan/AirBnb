@@ -27,7 +27,7 @@ html{
 }
 
 section{
-  padding:2rem 9%;
+  padding:5rem 9%;
 }
 
 .heading{
@@ -79,6 +79,7 @@ header .logo{
   font-weight: bolder;
   color:#fff;
   text-transform: uppercase;
+  text-decoration: none;
 }
 
 header .logo span{
@@ -89,6 +90,7 @@ header .navbar a{
   color:#fff;
   font-size: 2rem;
   margin:0 .8rem;
+  text-decoration: none;
 }
 
 header .navbar a:hover{
@@ -255,10 +257,21 @@ header .search-bar-container #search-bar{
 /* listing page */
 main{
   margin-top: 151px;
-  /* height: 2000px; */
 }
 
 /* HOUSING SECTION */
+.housing-title {
+  font-size: 2em;
+}
+
+.card-title{
+  font-size: 1em;
+}
+
+.card-text {
+  font-size: 1.2em;
+}
+
 .housings .card{
   border: none;
   border-radius: 0;
@@ -266,6 +279,7 @@ main{
 .housings .card .card-body{
   padding-top: 0;
   padding-bottom: 0;
+  font-size:1.4em;
 }
 
 .housings .card p{
@@ -315,7 +329,7 @@ main{
 .map {
   position: sticky;
   top: 0em;
-  height: 80em;
+  height: 85em;
 }
 /* END MAP SECTION */
 
