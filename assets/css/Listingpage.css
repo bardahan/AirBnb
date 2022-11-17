@@ -265,11 +265,11 @@ main{
 }
 
 .card-title{
-  font-size: 1em;
+  font-size: 1.5em;
 }
 
 .card-text {
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 
 .housings .card{
@@ -312,12 +312,7 @@ main{
   font-size: 1.8rem;
   margin-right: 0.1rem;
 }
-.housings .card .rating i{
-  color: var(--red);
-}
-.housings .card .rating .sale{
-  text-decoration: line-through;
-}
+
 .card-separation{
   width: 95%;
   margin: 0 auto 20px auto;
