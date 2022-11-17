@@ -17,20 +17,3 @@ formBtn.addEventListener('click', () =>{
 formClose.addEventListener('click', () =>{
   loginForm.classList.remove('active');
 });
-
-var propertyname = document.getElementById('propertyname');
-var propertyservices = document.getElementById('propertyservices');
-var propertyprice = document.getElementById('propertyprice');
-var propertydestription = document.getElementById('propertydestription');
-
-
-$.ajax({
-    url: 'http://localhost:3000/property',
-    type: 'GET',
-    dataType: 'json',
-    success: function (data) {
-        console.log(data);
-            propertyname.innerHTML = data[0].propertyname
-        }
-    }
-);
