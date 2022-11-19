@@ -55,24 +55,25 @@ google.maps.event.addListenerOnce(map, "idle", function () {
   });
 });
 
-$(".property").on("click", function () {
-  $.ajax({
-    type: "GET",
-    url: `http://localhost:3000/api/properties/` + $(this).attr("id"),
-    success: function (response) {
-      $(".popup-overlay").addClass("active");
-      $("#property-name").append(response.name);
-      $("#rating").append(response.rating);
-      $("#location").append(
-        "Address: " + response.address + ", " + response.country
-      );
-      $("#property-img").append(
-        '<img class="popup-img" src="' + response.propertyImageLink + '"/>'
-      );
-      response;
-    },
-  }).done;
-});
+// $(".property").on("click", function () {
+//   $.ajax({
+//     type: "GET",
+//     url: `http://localhost:3000/api/properties/` + $(this).attr("id"),
+//     success: function (response) {
+//       $(".popup-overlay").addClass("active");
+//       $("#property-name").append(response.name);
+//       $("#rating").append(response.rating);
+//       // $("#location").append(
+//       //   "Address: " + response.address + ", " + response.country
+//       // );
+//       // $(#)
+//       // $("#property-img").append(
+//       //   '<img class="popup-img" src="' + response.propertyImageLink + '"/>'
+//       // );
+//       response;
+//     },
+//   }).done;
+// });
 
 // $(".property").on("click", () => {
 
