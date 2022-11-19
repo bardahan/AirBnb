@@ -4,84 +4,116 @@ var sidebarOpen = false;
 var sidebar = document.getElementById("sidebar");
 
 function openSidebar() {
-  if(!sidebarOpen) {
+  if (!sidebarOpen) {
     sidebar.classList.add("sidebar-responsive");
     sidebarOpen = true;
   }
 }
 
 function closeSidebar() {
-  if(sidebarOpen) {
+  if (sidebarOpen) {
     sidebar.classList.remove("sidebar-responsive");
     sidebarOpen = false;
   }
 }
 
+var categories = [
+  "Israel",
+  "India",
+  "Hawaii",
+  "Austalia",
+  "France",
+  "Japan",
+  "Egypt",
+  "England",
+  "Spain",
+];
 
+var categories_count = [];
 
-// ---------- CHARTS ----------
-
-// BAR CHART
-var barChartOptions = {
-  series: [{
-    data: [10, 8, 6, 4, 2, 1, 3, 7,5]
-  }],
+var barConfig = {
   chart: {
-    type: 'bar',
     height: 350,
-    toolbar: {
-      show: false
-    },
-  },
-  colors: [
-    "#246dec",
-    "#cc3c43",
-    "#367952",
-    "#f5b74f",
-    "#4f35a1",
-    "#ff1493",
-    "#00ffff",
-    "#7ff000",
-    "#008b8b"
-  ],
-  plotOptions: {
-    bar: {
-      distributed: true,
-      borderRadius: 4,
-      horizontal: false,
-      columnWidth: '40%',
-    }
+    type: "bar",
   },
   dataLabels: {
-    enabled: false
+    enabled: false,
   },
-  legend: {
-    show: false
+  series: [],
+  title: {
+    text: "Sells",
   },
-  xaxis: {
-    categories: ["Israel", "India", "Hawaii", "Austalia", "France" , "Japan" , "Egypt", "England", "Spain"],
+  noData: {
+    text: "Loading...",
   },
-  yaxis: {
-    title: {
-      text: "Count"
-    }
-  }
 };
 
-var barChart = new ApexCharts(document.querySelector("#bar-chart"), barChartOptions);
+var barChart = new ApexCharts(document.querySelector("#bar-chart"), barConfig);
 barChart.render();
 
+$(window).on("load", function () {
+  for (var i = 0; i < categories.length; i++) {
+    $.ajax({
+      type: "GET",
+      indexValue: i,
+      url: "http://localhost:3000/api/properties/country/" + categories[i],
+      success: function (response) {
+        categories_count.push({
+          x: categories[this.indexValue],
+          y: response.length || 0,
+        });
+        barChart.updateSeries([
+          {
+            name: "Country",
+            data: categories_count,
+          },
+        ]);
+      },
+    }).done;
+  }
+});
+
+categories_count2 = [];
+
+var areaChart = new ApexCharts(
+  document.querySelector("#area-chart"),
+  barConfig
+);
+areaChart.render();
+
+$(window).on("load", function () {
+  for (var i = 0; i < categories.length; i++) {
+    $.ajax({
+      type: "GET",
+      indexValue: i,
+      url: "http://localhost:3000/api/charges" + categories[i],
+      success: function (response) {
+        categories_count2.push({
+          x: categories[this.indexValue],
+          y: response.length || 0,
+        });
+        areaChart.updateSeries([
+          {
+            name: "Country",
+            data: categories_count2,
+          },
+        ]);
+      },
+    }).done;
+  }
+});
 
 // AREA CHART
 var areaChartOptions = {
   series: [
-   {
-    name: 'Sales Orders',
-    data: [11, 32, 45, 32, 34, 52, 41]
-  }],
+    {
+      name: "Sales Orders",
+      data: [11, 32, 45, 32, 34, 52, 41],
+    },
+  ],
   chart: {
     height: 350,
-    type: 'area',
+    type: "area",
     toolbar: {
       show: false,
     },
@@ -91,25 +123,27 @@ var areaChartOptions = {
     enabled: false,
   },
   stroke: {
-    curve: 'smooth'
+    curve: "smooth",
   },
   labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
   markers: {
-    size: 0
+    size: 0,
   },
   yaxis: [
     {
       title: {
-        text: 'booking',
+        text: "booking",
       },
     },
- 
   ],
   tooltip: {
     shared: true,
     intersect: false,
-  }
+  },
 };
 
-var areaChart = new ApexCharts(document.querySelector("#area-chart"), areaChartOptions);
+var areaChart = new ApexCharts(
+  document.querySelector("#area-chart"),
+  areaChartOptions
+);
 areaChart.render();
