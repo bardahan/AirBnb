@@ -170,15 +170,12 @@ exports.createUser = (req, res) => {
     success:1})
   })
     .catch((e) =>{
-    console.log(e);
       res.status(500).send({ message: e.message || dbGeneralError })
     }
     );
 };
 
 exports.authentcateUser = (req, res) => {
-
-  console.log('horan');
   if (req.params.username && req.params.password) {
     const authentication = {
       username: req.params.username,
@@ -211,7 +208,6 @@ exports.authentcateUser = (req, res) => {
 };
 
 exports.deleteUser = (req, res) => {
-  console.log('delete')
   const username = req.params.username;
   UsersSchema.findOneAndDelete({ username: username }).then((user) => {
     if (!user) {
