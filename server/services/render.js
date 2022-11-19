@@ -39,16 +39,8 @@ exports.propertyPage = (req, res) => {
     .catch((e) => res.send(e));
 };
 
-exports.propertyPage = (req, res) => {
+exports.adminPage = (req, res) => {
   res.render("admin");
-  // axios
-  //   .get(apiUrl + "/properties/" + req.params.id)
-  //   .then(function (response) {
-  //     res.render("propertyPage", {
-  //       property: response.data,
-  //     });
-  //   })
-  //   .catch((e) => res.send(e));
 };
 
 exports.addProperty = (req, res) => {

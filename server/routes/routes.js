@@ -10,7 +10,7 @@ function SocketRouter(io) {
   router.get("/", services.homeRoute);
   router.get("/listProperty/:country", services.countryProperty);
   router.get("/property/:id", services.propertyPage);
-  router.get("/admin", services.propertyPage);
+  router.get("/admin", services.adminPage);
 
   router.get("/add-property", services.addProperty);
   router.get("/update-property", services.updateProperty);
