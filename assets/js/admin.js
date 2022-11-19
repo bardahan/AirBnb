@@ -19,14 +19,9 @@ function closeSidebar() {
 
 var categories = [
   "Israel",
-  "India",
-  "Hawaii",
-  "Austalia",
   "France",
   "Japan",
-  "Egypt",
   "England",
-  "Spain",
 ];
 
 var categories_count = [];
