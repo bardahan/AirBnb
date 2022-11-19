@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Create your property </title>
+
+    <!-- Montserrat Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/create.css" />
+  </head>
+  <body>
+    <div class="grid-container">
+      <%- include('include/_top_bar') %>
+
+      <!-- Sidebar -->
+      <aside id="sidebar">
+        <div class="sidebar-title">
+          <span class="material-icons-outlined" onclick="closeSidebar()"
+            >close</span
+          >
+        </div>
+
+        <div class="containers">
+        
+            <form action="">
+                
+                <div class="rowes">
+        
+                    <div class="coles">
+        
+                        <h3 class="titles">Create your property</h3>
+        
+                        <div class="inputBoxes">
+                            <span>Name :</span>
+                            <input type="text" placeholder="Bar's Place">        
+                        </div>
+        
+                        <div class="inputBoxes">
+                            <span>Description :</span>
+                            <input type="text" placeholder="Center Tel-aviv">        
+                        </div>
+                        
+                        <div class="inputBoxes">
+                            <span>Address :</span>
+                            <input type="text" placeholder="Street - House number - Apartment number ">        
+                        </div>
+        
+                        <div class="inputBoxes">
+                            <p class="custom-selected">
+                                <i class="ri-arrow-down-s-line">
+                                    <select name=" Country" >
+                                        <option value="" disabled selected>Select your country</option> 
+                                        <option value="Israel" >Israel</option> 
+                                        <option value="india" >india</option> 
+                                        <option value="Hawaii" >Hawaii</option> 
+                                        <option value="Australia" >Australia</option> 
+                                        <option value="France" >France</option> 
+                                        <option value="Japan" >Japan</option> 
+                                        <option value="Egypt" >Egypt</option> 
+                                        <option value="England" >England</option> 
+                                        <option value="Spain" >Spain</option>  
+                                    </select>   
+                            
+                                </i>    
+                            </p>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="inputBoxes">
+                                <span>Rating :</span>
+                                <input type="text" placeholder="6">        
+                            </div>
+                            <div class="inputBoxes">
+                                <span>Daily Price :</span>
+                                <input type="text" placeholder="50">        
+                            </div>
+        
+                            
+        
+                        </div>
+        
+                    </div>
+                    
+                    <div class="coles">
+                        <div class="inputBoxes">
+                            <span>Guest Count :</span>
+                            <input type="text" placeholder="4">        
+                        </div>
+        
+                        <div class="inputBoxes">
+                            <span>Property Image Link :</span>
+                            <input type="url" placeholder="www.img.co.il ">        
+                        </div>
+    
+                    </div>
+                </div>
+        
+                <input type="submit" value="Create your property" class="sumbit-btns">
+                
+            </form>
+        
+        
+            
+        
+          </div>
+        
+      <!-- End Main -->
+    </div>
+
+    <%- include('include/_bottom_bar') %>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Scripts -->
+    <!-- ApexCharts -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.3/apexcharts.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/js/admin.js"></script>
+  </body>
+</html>
