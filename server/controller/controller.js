@@ -1,6 +1,6 @@
 const { isObjectIdOrHexString } = require("mongoose");
 var { PropertySchema, UsersSchema, ChargesSchema } = require("../model/model");
-var { getGeoCodeByAddress } = require("../model/googleMaps");
+var { getGeoCodeByAddress } = require("./googleMaps");
 const dbGeneralError = "There was an error in database";
 
 // Properties
@@ -253,7 +253,6 @@ exports.createCharge = (req, res) => {
 };
 
 exports.findCharges = (req, res) => {
-  console.log(req);
   if (req.query.userId) {
     const userId = req.params.userId;
     ChargesSchema.find({ userId: userId })

@@ -1,0 +1,40 @@
+<% for (var i = 0; i < properties.length; i++) {%>
+</br>
+<div class="property" lat="<%= properties[i].latitude %>" lng="<%= properties[i].longitude %>" price="<%= properties[i].daily_price%>" id="<%= properties[i]._id%>">
+  <div class="row g-0 align-items-center" id="<%= properties[i]._id %> " data-role="popup">
+    <!-- Card Image -->
+    <div class="col-md-4">
+      <a href="#"
+        ><img
+          src="<%=properties[i].propertyImageLink%>"
+          class="card-img"
+          id="propertyimage"
+          alt="..."
+      /></a>
+    </div>
+    <!-- End Card Image -->
+    <!-- Card Body -->
+    <div class="card-body col-md-8">
+      <div class="d-flex justify-content-between">
+        <p classs="card-text" id="propertyname">
+          <span><%=properties[i].name%></span>
+        </p>
+      </div>
+      <h6 class="card-title" id="propertydescription">
+        <%=properties[i].description%>
+      </h6>
+      <p class="card-text" id="propertyservices">
+        <%=properties[i].guestCount%> Guests
+      </p>
+      <div class="rating d-flex justify-content-between mt-4">
+        <span class="card-text rate"
+          ><i class="fa-solid fa-star" id="propertyrating"></i>
+          <strong><%=properties[i].rating%></strong>
+        <span>
+          <strong class="text-muted sale" id="propertyprice"></strong>
+          <h5>$<%= properties[i].daily_price %> /Night</h5>
+      </div>
+    </div>
+  </div>
+</div>
+<%}%>

@@ -2,12 +2,16 @@ const express = require("express");
 
 const services = require("../services/render");
 const controller = require("../controller/controller");
+const googleMaps = require("../controller/googleMaps");
 
 function SocketRouter(io) {
   const router = express.Router();
 
   router.get("/", services.homeRoute);
   router.get("/listProperty/:country", services.countryProperty);
+  router.get("/test", (req, res) => {
+    res.render("house", {});
+  });
 
   router.get("/add-property", services.addProperty);
   router.get("/update-property", services.updateProperty);
@@ -31,6 +35,12 @@ function SocketRouter(io) {
   router.post("/api/charges", controller.createCharge);
   router.get("/api/charges", controller.findCharges);
   router.delete("/api/charges/:id", controller.deleteCharge);
+
+  // GoogleMaps
+  router.get(
+    "/api/maps/coordinates/:address",
+    googleMaps.getGeoCodeByAddressApi
+  );
 
   return router;
 }

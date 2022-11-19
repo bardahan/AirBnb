@@ -1,25 +1,31 @@
 const { default: axios } = require("axios");
 const path = require("path");
+var { mapInit } = require("../controller/googleMaps");
 
-const siteUrl = "http://localhost:3000/airbnb";
+const siteUrl = "http://localhost:3000";
+const apiUrl = "http://localhost:3000/api";
 
 exports.homeRoute = (req, res) => {
-  res.sendFile(path.join(__dirname, "../../views/index.html"));
+  res.render("index", {});
   // axios
   //   .get(siteUrl)
   //   .then(function (response) {
-  //     console.log("hi");
-  //     // console.log(path.join(__dirname, "/views/sample.html"));
-  //     // res.sendFile(path.join(__dirname, "/views/sample.html"));
+  //     res.render("index", {});
   //   })
   //   .catch((e) => {
-  //     // console.log(e);
   //     res.send(e);
   //   });
 };
 
 exports.countryProperty = (req, res) => {
-  res.sendFile(path.join(__dirname, "../../views/listingPage.html"));
+  axios
+    .get(apiUrl + "/properties/country/" + req.params.country)
+    .then(function (response) {
+      res.render("Listingpage", {
+        properties: response.data,
+      });
+    })
+    .catch((e) => res.send(e));
 };
 
 exports.addProperty = (req, res) => {

@@ -3,9 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Airbnb Project
-    </title>
+    <title>Airbnb Project</title>
 
     <link
       rel="stylesheet"
@@ -24,50 +22,9 @@
   <body>
     <!-- header section starts  -->
 
-    <header>
-      <div id="menu-bar" class="fas fa-bars"></div>
-
-      <a href="#" class="logo"><span>Ai</span>r<span>bnb</span></a>
-
-      <nav class="navbar">
-        <a href="#home">home</a>
-        <a href="#book">book</a>
-        <a href="#packages">packages</a>
-        <a href="#services">services</a>
-        <a href="#gallery">gallery</a>
-        <a href="#review">review</a>
-        <a href="#contact">contact</a>
-      </nav>
-
-      <div class="icons">
-        <i class="fas fa-search" id="search-btn"></i>
-        <i class="fas fa-user" id="login-btn"></i>
-      </div>
-
-      <form action="" class="search-bar-container">
-        <input type="search" id="search-bar" placeholder="search here..." />
-        <label for="search-bar" class="fas fa-search"></label>
-      </form>
-    </header>
+    <%- include('include/_top_bar') %>
 
     <!-- header section ends -->
-
-    <!-- login form container  -->
-
-    <div class="login-form-container">
-      <i class="fas fa-times" id="form-close"></i>
-
-      <form action="">
-        <h3>login</h3>
-        <input type="email" class="box" placeholder="enter your email" />
-        <input type="password" class="box" placeholder="enter your password" />
-        <input type="submit" value="login now" class="btn" />
-        <input type="checkbox" id="remember" />
-        <label for="remember">remember me</label>
-        <p>forget password? <a href="#">click here</a></p>
-        <p>don't have and account? <a href="#">register now</a></p>
-      </form>
-    </div>
 
     <!-- home section start -->
 
@@ -228,7 +185,7 @@
             <a href="#" class="btn">book now</a>
           </div>
         </div>
-        
+
         <div class="box">
           <img src=" images/p-6.jpg" alt="" />
           <div class="content">
@@ -636,45 +593,10 @@
 
     <!-- footer section  -->
 
-    <section class="footer">
-      <div class="box-container">
-        <div class="box">
-          <h3>about us</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-            quas magni pariatur est accusantium voluptas enim nemo facilis sit
-            debitis.
-          </p>
-        </div>
-        <div class="box">
-          <h3>branch locations</h3>
-          <a href="#">india</a>
-          <a href="#">USA</a>
-          <a href="#">japan</a>
-          <a href="#">france</a>
-        </div>
-        <div class="box">
-          <h3>quick links</h3>
-          <a href="#">home</a>
-          <a href="#">book</a>
-          <a href="#">packages</a>
-          <a href="#">services</a>
-          <a href="#">gallery</a>
-          <a href="#">review</a>
-          <a href="#">contact</a>
-        </div>
-        <div class="box">
-          <h3>follow us</h3>
-          <a href="#">facebook</a>
-          <a href="#">instagram</a>
-          <a href="#">twitter</a>
-          <a href="#">linkedin</a>
-        </div>
-      </div>
-    </section>
+    <%- include('include/_bottom_bar') %>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <!-- custom js file link -->
     <script src="/js/script.js"></script>
+    <script src="/js/common.js"></script>
   </body>
 </html>
