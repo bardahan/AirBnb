@@ -1,20 +1,24 @@
 const { default: axios } = require("axios");
 const path = require("path");
 var { mapInit } = require("../controller/googleMaps");
+var { userDetailsByHash } = require("../controller/controller");
 
 const siteUrl = "http://localhost:3000";
 const apiUrl = "http://localhost:3000/api";
 
+// function getUserCookieDetails(authHash) {
+//   UsersSchema.find({
+//     _id: req.params.hash,
+//   }).then((user) =>
+// }
+
 exports.homeRoute = (req, res) => {
+  // console.log(req.cookies.authHash);
+  // user = userDetailsByHash(req.cookies.authHash);
+  // console.log(user);
   res.render("index", {});
-  // axios
-  //   .get(siteUrl)
-  //   .then(function (response) {
-  //     res.render("index", {});
-  //   })
-  //   .catch((e) => {
-  //     res.send(e);
-  //   });
+  //   user: { privileges: req.cookies, username: req.cookies },
+  // });
 };
 
 exports.countryProperty = (req, res) => {

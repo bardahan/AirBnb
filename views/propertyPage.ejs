@@ -47,6 +47,7 @@
     <div
       class="houses-details"
       property-daily-price="<%= property.daily_price %>"
+      _id="<%= property._id %>"
     >
       <div class="houses-title">
         <h1><%= property.name %></h1>
@@ -72,35 +73,15 @@
         <h4>$ <%= property.daily_price %> / day</h4>
       </div>
       <hr class="lines" />
-      <form action="./order.html" class="check-forms" id="order-form">
+      <form method="POST" class="check-forms" id="order-form">
         <div>
           <input
             type="text"
+            id="daterange"
             name="daterange"
             value="<%= new Date().toLocaleDateString()%> - <%= new Date().toLocaleDateString() %>"
           />
         </div>
-        <!-- <label>Check-in</label>
-          <input
-            type="date"
-            id="dateFrom"
-            name="trip-start"
-            value="2018-07-22"
-            min="2018-01-01"
-            max="2018-12-31"
-          />
-        </div>
-        <div>
-          <label>Check-out</label>
-          <input
-            type="date"
-            id="dateTo"
-            name="trip-end"
-            value="2018-07-22"
-            min="2018-01-01"
-            max="2018-12-31"
-          />
-        </div> -->
         <div class="guest-field">
           <label>Guest Count</label>
           <select id="guestCount">
@@ -111,9 +92,9 @@
         </div>
         <div>
           <label>Total Price</label>
-          <h3 id="total-price">0</h3>
+          <h3 id="total-price"><%= property.daily_price %></h3>
         </div>
-        <button type="submit">Order</button>
+        <button id="submit" type="submit">Order</button>
       </form>
 
       <ul class="details-list">
@@ -152,10 +133,5 @@
 
     <script src="/js/common.js"></script>
     <script src="/js/propertyPage.js"></script>
-
-    <!-- <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
-      defer
-    ></script> -->
   </body>
 </html>

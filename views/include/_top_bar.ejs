@@ -2,16 +2,13 @@
   <a href="#" class="logo"><span>Ai</span>r<span>bnb</span></a>
 
   <nav class="navbar">
-    <a href="#home">home</a>
-    <a href="#book">book</a>
-    <a href="#packages">packages</a>
-    <a href="#services">services</a>
-    <a href="#gallery">gallery</a>
-    <a href="#review">review</a>
-    <a href="#contact">contact</a>
+    <a href="/">home</a>
+    <a href="listProperty">packages</a>
+    <a id="admin" href="admin" hidden>Admin</a>
   </nav>
 
   <div class="icons">
+    <i class="display-username" privileges="4" userid=""></i>
     <i class="fas fa-user" id="login-btn"></i>
   </div>
 </header>
@@ -19,14 +16,23 @@
 <div class="login-form-container">
   <i class="fas fa-times" id="form-close"></i>
 
-  <form action="">
+  <form action="" class="login">
     <h3>login</h3>
-    <input type="email" class="box" placeholder="enter your email" />
-    <input type="password" class="box" placeholder="enter your password" />
+    <input
+      type="username"
+      id="username"
+      class="box"
+      placeholder="enter your username"
+    />
+    <input
+      type="password"
+      id="password"
+      class="box"
+      placeholder="enter your password"
+    />
     <input type="submit" value="login now" class="btn" />
     <input type="checkbox" id="remember" />
     <label for="remember">remember me</label>
-    <p>forget password? <a href="#">click here</a></p>
     <p>don't have and account? <a href="#">register now</a></p>
   </form>
 </div>

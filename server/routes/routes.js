@@ -27,6 +27,7 @@ function SocketRouter(io) {
 
   // Users
   router.post("/api/users", controller.createUser);
+  router.get("/api/users/:hash", controller.getUserDetailsByHash);
   router.get("/api/users/:username/:password", controller.authentcateUser);
   router.delete("/api/users/:username", controller.deleteUser);
 

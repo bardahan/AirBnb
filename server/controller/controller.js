@@ -205,6 +205,25 @@ exports.authentcateUser = (req, res) => {
   }
 };
 
+exports.getUserDetailsByHash = (req, res) => {
+  UsersSchema.find({
+    _id: req.params.hash,
+  }).then((user) => {
+    res.send({
+      success: true,
+      privileges: user[0].privileges,
+      username: user[0].username,
+    });
+  });
+};
+
+exports.userDetailsByHash = (userHash) => {
+  const query = UsersSchema.find({
+    _id: userHash,
+  }).done;
+  return query;
+};
+
 exports.deleteUser = (req, res) => {
   const username = req.params.username;
   UsersSchema.findOneAndDelete({ username: username }).then((user) => {

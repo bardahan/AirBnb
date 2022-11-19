@@ -75,33 +75,33 @@ $(window).on("load", function () {
 
 categories_count2 = [];
 
-var areaChart = new ApexCharts(
-  document.querySelector("#area-chart"),
-  barConfig
-);
-areaChart.render();
+// var areaChart = new ApexCharts(
+//   document.querySelector("#area-chart"),
+//   barConfig
+// );
+// areaChart.render();
 
-$(window).on("load", function () {
-  for (var i = 0; i < categories.length; i++) {
-    $.ajax({
-      type: "GET",
-      indexValue: i,
-      url: "http://localhost:3000/api/charges" + categories[i],
-      success: function (response) {
-        categories_count2.push({
-          x: categories[this.indexValue],
-          y: response.length || 0,
-        });
-        areaChart.updateSeries([
-          {
-            name: "Country",
-            data: categories_count2,
-          },
-        ]);
-      },
-    }).done;
-  }
-});
+// $(window).on("load", function () {
+//   for (var i = 0; i < categories.length; i++) {
+//     $.ajax({
+//       type: "GET",
+//       indexValue: i,
+//       url: "http://localhost:3000/api/charges",
+//       success: function (response) {
+//         categories_count2.push({
+//           x: categories[this.indexValue],
+//           y: response.length || 0,
+//         });
+//         areaChart.updateSeries([
+//           {
+//             name: "Country",
+//             data: categories_count2,
+//           },
+//         ]);
+//       },
+//     }).done;
+//   }
+// });
 
 // AREA CHART
 var areaChartOptions = {
