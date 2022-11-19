@@ -9,9 +9,7 @@ function SocketRouter(io) {
 
   router.get("/", services.homeRoute);
   router.get("/listProperty/:country", services.countryProperty);
-  router.get("/test", (req, res) => {
-    res.render("house", {});
-  });
+  router.get("/property/:id", services.propertyPage);
 
   router.get("/add-property", services.addProperty);
   router.get("/update-property", services.updateProperty);

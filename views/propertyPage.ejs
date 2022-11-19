@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= property.name %></title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <!-- font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <%- include('include/_top_bar') %>
+
+    <div
+      class="houses-details"
+      property-daily-price="<%= property.daily_price %>"
+    >
+      <div class="houses-title">
+        <h1><%= property.name %></h1>
+        <div class="rows">
+          <div>
+            <% for (var i = 0; i < property.rating; i++) {%>
+            <i class="fas fa-star"></i>
+            <% } %>
+            <span><%= property.rating %></span>
+          </div>
+          <div>
+            <p>Location: <%= property.address %>, <%= property.country %></p>
+          </div>
+        </div>
+      </div>
+      <div class="gallerys">
+        <div class="gallerys-img-1">
+          <img src="<%= property.propertyImageLink %> " />
+        </div>
+      </div>
+      <div class="details">
+        <h2>Up to <%= property.guestCount %> guests</h2>
+        <h4>$ <%= property.daily_price %> / day</h4>
+      </div>
+      <hr class="lines" />
+      <form action="./order.html" class="check-forms" id="order-form">
+        <div>
+          <input
+            type="text"
+            name="daterange"
+            value="<%= new Date().toLocaleDateString()%> - <%= new Date().toLocaleDateString() %>"
+          />
+        </div>
+        <!-- <label>Check-in</label>
+          <input
+            type="date"
+            id="dateFrom"
+            name="trip-start"
+            value="2018-07-22"
+            min="2018-01-01"
+            max="2018-12-31"
+          />
+        </div>
+        <div>
+          <label>Check-out</label>
+          <input
+            type="date"
+            id="dateTo"
+            name="trip-end"
+            value="2018-07-22"
+            min="2018-01-01"
+            max="2018-12-31"
+          />
+        </div> -->
+        <div class="guest-field">
+          <label>Guest Count</label>
+          <select id="guestCount">
+            <% for (var i = 1; i < property.guestCount + 1; i++) {%>
+            <option value="<%=i%>"><%= i %></option>
+            <% } %>
+          </select>
+        </div>
+        <div>
+          <label>Total Price</label>
+          <h3 id="total-price">0</h3>
+        </div>
+        <button type="submit">Order</button>
+      </form>
+
+      <ul class="details-list">
+        <li>
+          Details
+          <span><%= property.description %></span>
+        </li>
+      </ul>
+      <hr class="lines" />
+      <!-- google maps  -->
+      <div id="map"></div>
+      <hr class="lines" />
+    </div>
+
+    <%- include('include/_bottom_bar') %>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+    />
+
+    <script src="/js/common.js"></script>
+    <script src="/js/propertyPage.js"></script>
+
+    <!-- <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+      defer
+    ></script> -->
+  </body>
+</html>
