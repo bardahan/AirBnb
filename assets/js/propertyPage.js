@@ -52,38 +52,3 @@ $("#order-form").submit(function (event) {
     }).done;
   }
 });
-
-// $("#submit").submit(function (event) {
-//   alert("fad");
-//   event.preventDefault();
-
-//   var data_array = $(this).serializeArray();
-//   console.log(data_array);
-//   var data = {};
-//   $.map(data_array, function (n, i) {
-//     data[n["name"]] = n["value"];
-//   });
-// });
-// $.ajax({
-//   type: "PUT",
-//   url: `http://localhost:3000/api/movies/${data.id}`,
-//   data: data,
-//   success: function (response) {
-//     alert("Movie was update successfully!");
-//   },
-// }).done;
-// });
-
-// if (window.location.pathname == "/") {
-//   $ondelete = $(".table tbody td a.delete");
-//   $ondelete.click(function () {
-//     var id = $(this).attr("data-id");
-//     $.ajax({
-//       type: "DELETE",
-//       url: `http://localhost:3000/api/movies/${id}`,
-//       success: function (response) {
-//         alert("Movie was deleted successfully!");
-//       },
-//     }).done;
-//   });
-// };
