@@ -148,7 +148,7 @@ header .search-bar-container label:hover {
   color: var(--orange);
 }
 
-.login-form-container {
+.modal {
   position: fixed;
   top: -120%;
   left: 0;
@@ -161,11 +161,11 @@ header .search-bar-container label:hover {
   justify-content: center;
 }
 
-.login-form-container.active {
+.modal.active {
   top: 0;
 }
 
-.login-form-container form {
+.modal form {
   margin: 2rem;
   padding: 1.5rem 2rem;
   border-radius: 0.5rem;
@@ -173,7 +173,7 @@ header .search-bar-container label:hover {
   width: 50rem;
 }
 
-.login-form-container form h3 {
+.modal form h3 {
   font-size: 3rem;
   color: #444;
   text-transform: uppercase;
@@ -181,7 +181,7 @@ header .search-bar-container label:hover {
   padding: 1rem 0;
 }
 
-.login-form-container form .box {
+.modal form .box {
   width: 100%;
   padding: 1rem;
   font-size: 1.7rem;
@@ -191,39 +191,39 @@ header .search-bar-container label:hover {
   text-transform: none;
 }
 
-.login-form-container form .box:focus {
+.modal form .box:focus {
   border-color: var(--orange);
 }
 
-.login-form-container form #remember {
+.modal form #remember {
   margin: 2rem 0;
 }
 
-.login-form-container form label {
+.modal form label {
   font-size: 1.5rem;
 }
 
-.login-form-container form .btn {
+.modal form .btn {
   display: block;
   width: 100%;
 }
 
-.login-form-container form p {
+.modal form p {
   padding: 0.5rem 0;
   font-size: 1.5rem;
   color: #666;
 }
 
-.login-form-container form p a {
+.modal form p a {
   color: var(--orange);
 }
 
-.login-form-container form p a:hover {
+.modal form p a:hover {
   color: #333;
   text-decoration: underline;
 }
 
-.login-form-container #form-close {
+.modal .form-close {
   position: absolute;
   top: 2rem;
   right: 3rem;
@@ -948,4 +948,16 @@ header .search-bar-container label:hover {
 .popup-content.active {
   /*Shows pop-up content when "active" class is present */
   visibility: visible;
+}
+
+.bg-error {
+  background: rgba(255, 145, 145, 0.612);
+}
+
+.display-none{
+  display:none;
+}
+
+.p-10{
+  padding:10px;
 }

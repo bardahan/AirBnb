@@ -166,14 +166,19 @@ exports.createUser = (req, res) => {
     .then((data) => {
       // res.redirect("/add-property");
       // req.io.emit("add_row", data);
-      res.json({ success: 1 }, 200);
-    })
-    .catch((e) =>
+      res.send({
+    success:1})
+  })
+    .catch((e) =>{
+    console.log(e);
       res.status(500).send({ message: e.message || dbGeneralError })
+    }
     );
 };
 
 exports.authentcateUser = (req, res) => {
+
+  console.log('horan');
   if (req.params.username && req.params.password) {
     const authentication = {
       username: req.params.username,
@@ -206,6 +211,7 @@ exports.authentcateUser = (req, res) => {
 };
 
 exports.deleteUser = (req, res) => {
+  console.log('delete')
   const username = req.params.username;
   UsersSchema.findOneAndDelete({ username: username }).then((user) => {
     if (!user) {

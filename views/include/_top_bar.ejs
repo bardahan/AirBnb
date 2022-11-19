@@ -13,11 +13,12 @@
 
   <div class="icons">
     <i class="fas fa-user" id="login-btn"></i>
+    <i class="fas open-register-from" >register</i>
   </div>
 </header>
 
-<div class="login-form-container">
-  <i class="fas fa-times" id="form-close"></i>
+<div class="modal login-form-container">
+  <i class="fas fa-times form-close"></i>
 
   <form action="">
     <h3>login</h3>
@@ -27,6 +28,23 @@
     <input type="checkbox" id="remember" />
     <label for="remember">remember me</label>
     <p>forget password? <a href="#">click here</a></p>
-    <p>don't have and account? <a href="#">register now</a></p>
+    <p>don't have and account? <a class="open-register-from" href="#">register now</a></p>
+  </form>
+</div>
+
+<div class="modal register-form-container">
+  <i class="fas fa-times form-close"></i>
+  <form id="register-submit-form" >
+    <h3>Register</h3>
+    <input id="register-email" name="email" type="email" class="box" placeholder="enter your email" />
+    <div class="p-10 bg-error display-none" id="register-username-input-error">Please make sure your email is correct</div>
+    <input id="register-password" name="password" type="password" class="box" placeholder="enter your password" />
+    <div class="p-10 bg-error display-none" id="register-password-input-error">Please make sure your password has at least 6 characters</div>
+    <select id="register-privileges" name="privileges" class="box">
+      <option value="2">Renter</option>
+      <option value="3">Renting</option>
+    </select>
+    <input id="register-submit-btn" value="Register now" class="btn" />
+    <p>Already have an account?<a class="open-login-from" href="#">login now</a></p>
   </form>
 </div>
